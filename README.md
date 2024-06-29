@@ -1,30 +1,54 @@
 ![Kittygram workflow](https://github.com/Prospero6666/kittygram_final/actions/workflows/main.yml/badge.svg)
-![main branch status](https://github.com/Prospero6666/kittygram_final/actions/workflows/main.yml/badge.svg?branch=main)
-![workflow status after push](https://github.com/Prospero6666/kittygram_final/actions/workflows/main.yml/badge.svg?event=push)
 
-#  Как работать с репозиторием финального задания
+#  Kittygram — это платформа для обмена фотографиями, специально созданная для любителей кошек
 
-## Что нужно сделать
+## Описание проекта
 
-Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
+Kittygram – это готовое решение с фронтендом и бэкендом, а также поддержкой API. Сервис позволяет пользователям регистрироваться и делиться очаровательными снимками своих питомцев, просматривать фото других пользователей и находить вдохновение в мире кошачьих приключений. Kittygram предоставляет удобные инструменты для загрузки изображений, выбора цветов и добавления уникальных достижений питомцев.
 
-## Как проверить работу с помощью автотестов
+## Стек
 
-В корне репозитория создайте файл tests.yml со следующим содержимым:
-```yaml
-repo_owner: ваш_логин_на_гитхабе
-kittygram_domain: полная ссылка (https://доменное_имя) на ваш проект Kittygram
-taski_domain: полная ссылка (https://доменное_имя) на ваш проект Taski
-dockerhub_username: ваш_логин_на_докерхабе
+### Python, Django, PostgreSQL, SQLite, Docker, Ubuntu и Nginx
+
+## Как запустить проект:
+
+Клонировать репозиторий и перейти в него в командной строке:
 ```
+git clone git@github.com:Prospero6666/kittygram_final.git
+```
+```
+cd kittygram_final
+```
+Cоздать и активировать виртуальное окружение:
+```
+Для Windows:
+python -m venv env
+source venv/Script/activate
 
-Скопируйте содержимое файла `.github/workflows/main.yml` в файл `kittygram_workflow.yml` в корневой директории проекта.
+Для Linux/MacOS:
+python3 -m venv env
+source venv/bin/activate
+```
+Установить зависимости из файла requirements.txt:
+```
+Для Windows:
+python -m pip install --upgrade pip
+pip install -r requirements.txt
 
-Для локального запуска тестов создайте виртуальное окружение, установите в него зависимости из backend/requirements.txt и запустите в корневой директории проекта `pytest`.
-
-## Чек-лист для проверки перед отправкой задания
-
-- Проект Taski доступен по доменному имени, указанному в `tests.yml`.
-- Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
-- Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
-- В корне проекта есть файл `kittygram_workflow.yml`.
+Для Linux/MacOS:
+python3 -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+Заполнить .env file:
+```
+# Файл .env
+POSTGRES_USER=<your_user_name>
+POSTGRES_PASSWORD=<your_password>
+POSTGRES_DB=<your_db_name>
+DB_HOST=<db_name>
+DB_PORT=5432
+SECRET_KEY=<your_secret_key>
+ALLOWED_HOSTS=<your_allowed_hosts>
+```
+### Автор
+Bakhtiyar Kayupov
